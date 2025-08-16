@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: cheko-app
+  config:
+    import: classpath:env.properties
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
+
+minio:
+  url: http://localhost:9000
+  access-key: minioadmin
+  secret-key: minioadmin
+  bucket: my-bucket

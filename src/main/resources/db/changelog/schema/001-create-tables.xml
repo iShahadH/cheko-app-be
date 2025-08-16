@@ -1,0 +1,58 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="001-create-mst-type-table" author="salohaydib">
+        <createTable tableName="mst_type">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_mst_type"/>
+            </column>
+            <column name="name_ar" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name_en" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="002-create-dish-table" author="salohaydib">
+        <createTable tableName="dish">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_DISH"/>
+            </column>
+
+            <column name="type_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="name" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="description" type="NVARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="calories" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price" type="DECIMAL(10,2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="003-add-dish-type-fk" author="salohaydib">
+        <addForeignKeyConstraint
+                baseTableName="dish"
+                baseColumnNames="type_id"
+                referencedTableName="mst_type"
+                referencedColumnNames="id"
+                constraintName="fk_dish_type"/>
+    </changeSet>
+
+</databaseChangeLog>

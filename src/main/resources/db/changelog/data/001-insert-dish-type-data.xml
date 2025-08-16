@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet author="salohaydib" id="insert-type-data">
+        <insert tableName="mst_type">
+            <column name="id" valueNumeric="1"/>
+            <column name="name_ar" value="إفطار"/>
+            <column name="name_en" value="breakfast"/>
+        </insert>
+        <insert tableName="mst_type">
+            <column name="id" valueNumeric="2"/>
+            <column name="name_ar" value="مشروبات"/>
+            <column name="name_en" value="drinks"/>
+        </insert>
+        <insert tableName="mst_type">
+            <column name="id" valueNumeric="3"/>
+            <column name="name_ar" value="الحساء"/>
+            <column name="name_en" value="soups"/>
+        </insert>
+        <insert tableName="mst_type">
+            <column name="id" valueNumeric="4"/>
+            <column name="name_ar" value="السوشي"/>
+            <column name="name_en" value="sushi"/>
+        </insert>
+        <insert tableName="mst_type">
+            <column name="id" valueNumeric="5"/>
+            <column name="name_ar" value="آخرون"/>
+            <column name="name_en" value="others"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
