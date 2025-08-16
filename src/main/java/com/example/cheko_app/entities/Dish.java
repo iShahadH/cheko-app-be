@@ -1,9 +1,15 @@
 package com.example.cheko_app.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+@Entity
+@Getter
+@Setter
 @Table(name = "dish")
 public class Dish {
 
