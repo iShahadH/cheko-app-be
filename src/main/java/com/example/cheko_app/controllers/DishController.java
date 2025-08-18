@@ -23,4 +23,9 @@ public class DishController {
         return ApiResponse.getSuccessResponse(dishService.browse(search, type));
     }
 
+    @GetMapping("/count-by-type")
+    public ResponseEntity<?> getDishCountsByType() {
+        return ResponseEntity.ok(dishService.countGroupedByType());
+    }
+
 }
