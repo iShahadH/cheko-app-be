@@ -33,4 +33,7 @@ public class Dish {
     @Column(nullable = false)
     private Double price;
 
+    @Column(nullable = false)
+    private Boolean isBestSeller = false;
+
 }

@@ -3,3 +3,7 @@ databaseChangeLog:
       file: db/changelog/schema/001-create-tables.xml
   - include:
       file: db/changelog/data/001-insert-dish-type-data.xml
+  - include:
+      file: db/changelog/data/002-insert-dish-dummy-data.xml
+  - include:
+      file: db/changelog/schema/002-update-dish-table.xml

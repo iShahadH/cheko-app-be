@@ -3,14 +3,14 @@ package com.example.cheko_app.controllers;
 
 import com.example.cheko_app.dto.ApiResponse;
 import com.example.cheko_app.services.DishService;
+import com.example.cheko_app.validators.DishExists;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Validated
 @RequiredArgsConstructor
 @RequestMapping("dish")
 public class DishController {
@@ -26,6 +26,11 @@ public class DishController {
     @GetMapping("/count-by-type")
     public ResponseEntity<?> getDishCountsByType() {
         return ResponseEntity.ok(dishService.countGroupedByType());
+    }
+
+    @GetMapping("details/{dishId}")
+    public ResponseEntity<?> getDishDetails(@PathVariable @DishExists Long dishId) {
+        return ResponseEntity.ok(dishService.details(dishId));
     }
 
 }

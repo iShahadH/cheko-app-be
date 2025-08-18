@@ -1,0 +1,238 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet author="salohaydib" id="insert-dish-dummy-data">
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Omelet"/>
+            <column name="description" value="Egg omelet with cheese"/>
+            <column name="calories" value="250"/>
+            <column name="price" value="20"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Pancakes"/>
+            <column name="description" value="Fluffy pancakes with syrup"/>
+            <column name="calories" value="300"/>
+            <column name="price" value="25"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Waffles"/>
+            <column name="description" value="Belgian waffles with honey"/>
+            <column name="calories" value="320"/>
+            <column name="price" value="28"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="French Toast"/>
+            <column name="description" value="Golden brown french toast"/>
+            <column name="calories" value="280"/>
+            <column name="price" value="22"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Scrambled Eggs"/>
+            <column name="description" value="Classic scrambled eggs"/>
+            <column name="calories" value="200"/>
+            <column name="price" value="18"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Croissant"/>
+            <column name="description" value="Butter croissant"/>
+            <column name="calories" value="150"/>
+            <column name="price" value="15"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Bagel"/>
+            <column name="description" value="Fresh bagel with cream cheese"/>
+            <column name="calories" value="220"/>
+            <column name="price" value="18"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Avocado Toast"/>
+            <column name="description" value="Toast topped with avocado"/>
+            <column name="calories" value="270"/>
+            <column name="price" value="26"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Granola Bowl"/>
+            <column name="description" value="Granola with yogurt and fruits"/>
+            <column name="calories" value="310"/>
+            <column name="price" value="30"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="1"/>
+            <column name="name" value="Foul Medames"/>
+            <column name="description" value="Traditional fava bean breakfast"/>
+            <column name="calories" value="330"/>
+            <column name="price" value="20"/>
+        </insert>
+
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="2"/>
+            <column name="name" value="Orange Juice"/>
+            <column name="description" value="Freshly squeezed orange juice"/>
+            <column name="calories" value="120"/>
+            <column name="price" value="10"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="2"/>
+            <column name="name" value="Coffee"/>
+            <column name="description" value="Hot brewed coffee"/>
+            <column name="calories" value="5"/>
+            <column name="price" value="8"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="2"/>
+            <column name="name" value="Tea"/>
+            <column name="description" value="Black tea with mint"/>
+            <column name="calories" value="2"/>
+            <column name="price" value="7"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="2"/>
+            <column name="name" value="Milkshake"/>
+            <column name="description" value="Vanilla milkshake"/>
+            <column name="calories" value="300"/>
+            <column name="price" value="18"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="2"/>
+            <column name="name" value="Smoothie"/>
+            <column name="description" value="Mixed fruit smoothie"/>
+            <column name="calories" value="250"/>
+            <column name="price" value="20"/>
+        </insert>
+
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Tomato Soup"/>
+            <column name="description" value="Creamy tomato soup"/>
+            <column name="calories" value="150"/>
+            <column name="price" value="15"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Chicken Soup"/>
+            <column name="description" value="Classic chicken broth"/>
+            <column name="calories" value="180"/>
+            <column name="price" value="18"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Mushroom Soup"/>
+            <column name="description" value="Cream of mushroom"/>
+            <column name="calories" value="200"/>
+            <column name="price" value="20"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Lentil Soup"/>
+            <column name="description" value="Spiced lentil soup"/>
+            <column name="calories" value="170"/>
+            <column name="price" value="16"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Vegetable Soup"/>
+            <column name="description" value="Fresh vegetable soup"/>
+            <column name="calories" value="160"/>
+            <column name="price" value="15"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Seafood Soup"/>
+            <column name="description" value="Mixed seafood soup"/>
+            <column name="calories" value="220"/>
+            <column name="price" value="25"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="3"/>
+            <column name="name" value="Corn Soup"/>
+            <column name="description" value="Sweet corn soup"/>
+            <column name="calories" value="190"/>
+            <column name="price" value="17"/>
+        </insert>
+
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="4"/>
+            <column name="name" value="California Roll"/>
+            <column name="description" value="Crab and avocado roll"/>
+            <column name="calories" value="210"/>
+            <column name="price" value="35"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="4"/>
+            <column name="name" value="Salmon Nigiri"/>
+            <column name="description" value="Fresh salmon over rice"/>
+            <column name="calories" value="180"/>
+            <column name="price" value="40"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="4"/>
+            <column name="name" value="Tuna Roll"/>
+            <column name="description" value="Classic tuna roll"/>
+            <column name="calories" value="200"/>
+            <column name="price" value="38"/>
+        </insert>
+
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Pizza"/>
+            <column name="description" value="Cheese pizza"/>
+            <column name="calories" value="350"/>
+            <column name="price" value="45"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Burger"/>
+            <column name="description" value="Beef burger with cheese"/>
+            <column name="calories" value="400"/>
+            <column name="price" value="50"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Pasta"/>
+            <column name="description" value="Creamy Alfredo pasta"/>
+            <column name="calories" value="370"/>
+            <column name="price" value="42"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Shawarma"/>
+            <column name="description" value="Chicken shawarma wrap"/>
+            <column name="calories" value="330"/>
+            <column name="price" value="28"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Falafel"/>
+            <column name="description" value="Falafel with tahini"/>
+            <column name="calories" value="300"/>
+            <column name="price" value="22"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Steak"/>
+            <column name="description" value="Grilled beef steak"/>
+            <column name="calories" value="450"/>
+            <column name="price" value="70"/>
+        </insert>
+        <insert tableName="dish">
+            <column name="type_id" valueNumeric="5"/>
+            <column name="name" value="Fries"/>
+            <column name="description" value="Crispy french fries"/>
+            <column name="calories" value="250"/>
+            <column name="price" value="15"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

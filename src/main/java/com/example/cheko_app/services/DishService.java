@@ -1,10 +1,12 @@
 package com.example.cheko_app.services;
 
 import com.example.cheko_app.dto.BrowseResponse;
+import com.example.cheko_app.dto.DetailsResponse;
 import com.example.cheko_app.dto.DishCountResponse;
 import com.example.cheko_app.entities.Dish;
 import com.example.cheko_app.entities.MasterType;
 import com.example.cheko_app.mapper.DishToBrowseResponseMapper;
+import com.example.cheko_app.mapper.DishToDetailsResponseMapper;
 import com.example.cheko_app.mapper.LookupMapper;
 import com.example.cheko_app.repositories.DishRepository;
 import com.example.cheko_app.specification.DishSpecification;
@@ -21,6 +23,7 @@ public class DishService {
 
     private final DishRepository dishRepository;
     private final DishToBrowseResponseMapper dishToBrowseResponseMapper;
+    private final DishToDetailsResponseMapper dishToDetailsResponseMapper;
     private final LookupMapper lookupMapper;
 
     public List<BrowseResponse> browse(String search, Long type) {
@@ -42,5 +45,10 @@ public class DishService {
                         (Long) obj[1] // count column
                 ))
                 .toList();
+    }
+
+    public DetailsResponse details(Long dishId) {
+        Dish dish = dishRepository.findById(dishId).orElseThrow();
+        return dishToDetailsResponseMapper.map(dish);
     }
 }

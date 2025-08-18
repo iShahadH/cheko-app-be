@@ -7,8 +7,8 @@ import lombok.Data;
 public class BrowseResponse {
 
     private String name;
-    private String description;
     private Integer calories;
     private Double price;
+    private Boolean isBestSeller;
 
 }
