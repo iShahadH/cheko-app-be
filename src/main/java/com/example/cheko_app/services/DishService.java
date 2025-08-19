@@ -3,6 +3,7 @@ package com.example.cheko_app.services;
 import com.example.cheko_app.dto.BrowseResponse;
 import com.example.cheko_app.dto.DetailsResponse;
 import com.example.cheko_app.dto.DishCountResponse;
+import com.example.cheko_app.dto.QuantityActionRequest;
 import com.example.cheko_app.entities.Dish;
 import com.example.cheko_app.entities.MasterType;
 import com.example.cheko_app.mapper.DishToBrowseResponseMapper;
@@ -15,6 +16,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.EntityNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -53,6 +55,23 @@ public class DishService {
     public DetailsResponse details(Long dishId) {
         Dish dish = dishRepository.findById(dishId).orElseThrow();
         return dishToDetailsResponseMapper.map(dish);
+    }
+
+    public void increase(Long dishId) {
+        Dish dish = dishRepository.findById(dishId)
+                .orElseThrow(() -> new EntityNotFoundException("Dish not found with id: " + dishId));
+        dish.setQuantity(dish.getQuantity() + 1);
+        dishRepository.save(dish);
+    }
+
+    public void decrease(Long dishId) {
+        Dish dish = dishRepository.findById(dishId)
+                .orElseThrow(() -> new EntityNotFoundException("Dish not found with id: " + dishId));
+
+        if (dish.getQuantity() > 0) {
+            dish.setQuantity(dish.getQuantity() - 1);
+            dishRepository.save(dish);
+        }
     }
 
     public void uploadDishImage(Long dishId, MultipartFile file) throws IOException {

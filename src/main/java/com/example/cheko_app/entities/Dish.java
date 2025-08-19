@@ -31,6 +31,9 @@ public class Dish {
     private Integer calories;
 
     @Column(nullable = false)
+    private Integer quantity;
+
+    @Column(nullable = false)
     private Double price;
 
     @Column(nullable = false)

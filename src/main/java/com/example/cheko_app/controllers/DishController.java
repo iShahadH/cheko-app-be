@@ -2,6 +2,7 @@ package com.example.cheko_app.controllers;
 
 
 import com.example.cheko_app.dto.ApiResponse;
+import com.example.cheko_app.dto.QuantityActionRequest;
 import com.example.cheko_app.services.DishService;
 import com.example.cheko_app.validators.DishExists;
 import lombok.RequiredArgsConstructor;
@@ -39,6 +40,23 @@ public class DishController {
     @GetMapping("image/{dishId}")
     public ResponseEntity<?> getDishImage(@PathVariable Long dishId) throws Exception {
         return ResponseEntity.ok(dishService.getDishImage(dishId));
+    }
+
+    // We can combine this into a single API that receives an action and performs the corresponding operation.
+    @PostMapping("increase/quantity")
+    public ResponseEntity<?> increaseQuantity(
+            @RequestBody QuantityActionRequest request) {
+
+        dishService.increase(request.getDishId());
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("decrease/quantity")
+    public ResponseEntity<?> decreaseQuantity(
+            @RequestBody QuantityActionRequest request) {
+
+        dishService.decrease(request.getDishId());
+        return ResponseEntity.ok().build();
     }
 
     //Helper method to handle image uploads
