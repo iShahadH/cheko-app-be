@@ -30,20 +30,6 @@ public class ApiResponse<T> implements Serializable {
         return getResponse(ResponseStatus.SUCCESS, null, null, data, Collections.emptyList(), HttpStatus.OK);
     }
 
-    @SuppressWarnings("unchecked")
-    public static ResponseEntity<Object> getFailureResponse(List<String> errors,
-                                                            HttpStatus httpStatus) {
-        ResponseEntity<?> response = getResponse(ResponseStatus.FAIL, null, "Internal", null, errors, httpStatus);
-        return (ResponseEntity<Object>) response;
-    }
-
-    @SuppressWarnings("unchecked")
-    public static ResponseEntity<Object> getFailureResponse(ResponseStatus responseStatus, Object[] messageArgs, String source, List<String> errors,
-                                                            HttpStatus httpStatus) {
-        ResponseEntity<?> response = getResponse(responseStatus, messageArgs, source, null, errors, httpStatus);
-        return (ResponseEntity<Object>) response;
-    }
-
     private static <T> ResponseEntity<ApiResponse<T>> getResponse(ResponseStatus responseStatus, Object[] messageArgs, String source, T data,
                                                                   List<String> errors, HttpStatus httpStatus) {
 

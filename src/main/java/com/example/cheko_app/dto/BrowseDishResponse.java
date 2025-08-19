@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class BrowseResponse {
+public class BrowseDishResponse {
 
     private String id;
     private String name;

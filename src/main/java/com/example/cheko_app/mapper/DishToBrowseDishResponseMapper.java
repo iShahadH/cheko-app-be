@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface DishToBrowseResponseMapper {
+public interface DishToBrowseDishResponseMapper {
 
     BrowseDishResponse map(Dish dish);
 

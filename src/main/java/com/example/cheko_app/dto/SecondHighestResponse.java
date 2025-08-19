@@ -9,6 +9,6 @@ import lombok.Setter;
 public class SecondHighestResponse {
 
     private LookupDto type;
-    private DetailsResponse d;
+    private DetailsDishResponse d;
 
 }

@@ -1,12 +1,11 @@
 package com.example.cheko_app.services;
 
-import com.example.cheko_app.dto.BrowseResponse;
-import com.example.cheko_app.dto.DetailsResponse;
+import com.example.cheko_app.dto.BrowseDishResponse;
+import com.example.cheko_app.dto.DetailsDishResponse;
 import com.example.cheko_app.dto.DishCountResponse;
-import com.example.cheko_app.dto.QuantityActionRequest;
 import com.example.cheko_app.entities.Dish;
 import com.example.cheko_app.entities.MasterType;
-import com.example.cheko_app.mapper.DishToBrowseResponseMapper;
+import com.example.cheko_app.mapper.DishToBrowseDishResponseMapper;
 import com.example.cheko_app.mapper.DishToDetailsResponseMapper;
 import com.example.cheko_app.mapper.LookupMapper;
 import com.example.cheko_app.repositories.DishRepository;
@@ -27,18 +26,18 @@ public class DishService {
 
     private final MinioService minioService;
     private final DishRepository dishRepository;
-    private final DishToBrowseResponseMapper dishToBrowseResponseMapper;
+    private final DishToBrowseDishResponseMapper dishToBrowseDishResponseMapper;
     private final DishToDetailsResponseMapper dishToDetailsResponseMapper;
     private final LookupMapper lookupMapper;
 
-    public List<BrowseResponse> browse(String search, Long type) {
+    public List<BrowseDishResponse> browse(String search, Long type) {
         Specification<Dish> spec = Specification
                 .where(DishSpecification.hasSearchByNameOrDescription(search))
                 .and(DishSpecification.hasType(type));
 
         List<Dish> dishes = dishRepository.findAll(spec);
 
-        return dishToBrowseResponseMapper.mapAll(dishes);
+        return dishToBrowseDishResponseMapper.mapAll(dishes);
     }
 
     public List<DishCountResponse> countGroupedByType() {
@@ -52,7 +51,7 @@ public class DishService {
                 .toList();
     }
 
-    public DetailsResponse details(Long dishId) {
+    public DetailsDishResponse details(Long dishId) {
         Dish dish = dishRepository.findById(dishId).orElseThrow();
         return dishToDetailsResponseMapper.map(dish);
     }

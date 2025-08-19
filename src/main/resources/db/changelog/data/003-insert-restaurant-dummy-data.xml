@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet author="salohaydib" id="insert-dummy-restaurants">
+        <insert tableName="restaurant">
+            <column name="name" value="KFC"/>
+            <column name="latitude" value="24.7136"/>
+            <column name="longitude" value="46.6753"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Pizza Hut"/>
+            <column name="latitude" value="24.7200"/>
+            <column name="longitude" value="46.6800"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="McDonald's"/>
+            <column name="latitude" value="24.7250"/>
+            <column name="longitude" value="46.6900"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Burger King"/>
+            <column name="latitude" value="24.7300"/>
+            <column name="longitude" value="46.7000"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Subway"/>
+            <column name="latitude" value="24.7400"/>
+            <column name="longitude" value="46.7100"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Domino's Pizza"/>
+            <column name="latitude" value="24.7500"/>
+            <column name="longitude" value="46.7200"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Hardee's"/>
+            <column name="latitude" value="24.7600"/>
+            <column name="longitude" value="46.7300"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Shawarma House"/>
+            <column name="latitude" value="24.7700"/>
+            <column name="longitude" value="46.7400"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Texas Roadhouse"/>
+            <column name="latitude" value="24.7800"/>
+            <column name="longitude" value="46.7500"/>
+        </insert>
+
+        <insert tableName="restaurant">
+            <column name="name" value="Applebee's"/>
+            <column name="latitude" value="24.7900"/>
+            <column name="longitude" value="46.7600"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class DetailsResponse extends BrowseResponse {
+public class DetailsDishResponse extends BrowseDishResponse {
 
     private String description;
 

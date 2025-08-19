@@ -29,12 +29,12 @@ public class DishController {
 
     @GetMapping("/count-by-type")
     public ResponseEntity<?> getDishCountsByType() {
-        return ResponseEntity.ok(dishService.countGroupedByType());
+        return ApiResponse.getSuccessResponse(dishService.countGroupedByType());
     }
 
     @GetMapping("details/{dishId}")
     public ResponseEntity<?> getDishDetails(@PathVariable @DishExists Long dishId) {
-        return ResponseEntity.ok(dishService.details(dishId));
+        return ApiResponse.getSuccessResponse(dishService.details(dishId));
     }
 
     @GetMapping("image/{dishId}")
@@ -48,7 +48,7 @@ public class DishController {
             @RequestBody QuantityActionRequest request) {
 
         dishService.increase(request.getDishId());
-        return ResponseEntity.ok().build();
+        return ApiResponse.getSuccessResponse();
     }
 
     @PostMapping("decrease/quantity")
@@ -56,7 +56,7 @@ public class DishController {
             @RequestBody QuantityActionRequest request) {
 
         dishService.decrease(request.getDishId());
-        return ResponseEntity.ok().build();
+        return ApiResponse.getSuccessResponse();
     }
 
     //Helper method to handle image uploads
