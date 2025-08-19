@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @RestController
 @Validated
@@ -19,7 +22,7 @@ public class DishController {
     @GetMapping("browse")
     public ResponseEntity<?> browse(
             @RequestParam(value = "search", required = false) String search,
-            @RequestParam(value = "type", required = false) Long type) {
+            @RequestParam(value = "type", required = false) Long type) { //Parameter validation can be applied here.
         return ApiResponse.getSuccessResponse(dishService.browse(search, type));
     }
 
@@ -31,6 +34,19 @@ public class DishController {
     @GetMapping("details/{dishId}")
     public ResponseEntity<?> getDishDetails(@PathVariable @DishExists Long dishId) {
         return ResponseEntity.ok(dishService.details(dishId));
+    }
+
+    @GetMapping("image/{dishId}")
+    public ResponseEntity<?> getDishImage(@PathVariable Long dishId) throws Exception {
+        return ResponseEntity.ok(dishService.getDishImage(dishId));
+    }
+
+    //Helper method to handle image uploads
+    @PostMapping("image/{dishId}")
+    public ResponseEntity<?> uploadDishImage(@PathVariable Long dishId,
+                                             @RequestParam("file") MultipartFile file) throws IOException {
+        dishService.uploadDishImage(dishId, file);
+        return ResponseEntity.ok().build();
     }
 
 }

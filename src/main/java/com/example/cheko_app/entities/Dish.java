@@ -36,4 +36,7 @@ public class Dish {
     @Column(nullable = false)
     private Boolean isBestSeller = false;
 
+    @Column(name = "s3_url")
+    private String s3Url;
+
 }

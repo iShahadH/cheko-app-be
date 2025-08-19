@@ -12,4 +12,12 @@
         </addColumn>
     </changeSet>
 
+    <changeSet author="salohaydib" id="add-s3-url-to-dish">
+        <addColumn tableName="dish">
+            <column name="s3_url" type="varchar(1024)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>
