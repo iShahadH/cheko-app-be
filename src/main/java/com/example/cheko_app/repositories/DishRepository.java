@@ -12,4 +12,19 @@ import java.util.List;
 public interface DishRepository extends JpaRepository<Dish, Long>, JpaSpecificationExecutor<Dish> {
     @Query("SELECT t, COUNT(d) FROM Dish d JOIN d.type t GROUP BY t")
     List<Object[]> countDishesGroupedByType();
+
+    @Query("""
+                SELECT d 
+                FROM Dish d 
+                WHERE d.calories = (
+                    SELECT MAX(d2.calories) 
+                    FROM Dish d2 
+                    WHERE d2.type = d.type AND d2.calories < (
+                        SELECT MAX(d3.calories) 
+                        FROM Dish d3 
+                        WHERE d3.type = d.type
+                    )
+                )
+            """)
+    List<Dish> findSecondHighestCaloriePerType();
 }

@@ -11,6 +11,7 @@ public class BrowseDishResponse {
     private Integer calories;
     private Integer quantity;
     private Double price;
+    private LookupDto type;
     private Boolean isBestSeller;
     private String s3Url;
 

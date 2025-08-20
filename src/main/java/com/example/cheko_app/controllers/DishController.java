@@ -59,6 +59,11 @@ public class DishController {
         return ApiResponse.getSuccessResponse();
     }
 
+    @GetMapping("second-highest-calorie")
+    public ResponseEntity<?> getSecondHighestCalorie() {
+        return ApiResponse.getSuccessResponse(dishService.getSecondHighestCalorie());
+    }
+
     //Helper method to handle image uploads
     @PostMapping("image/{dishId}")
     public ResponseEntity<?> uploadDishImage(@PathVariable Long dishId,

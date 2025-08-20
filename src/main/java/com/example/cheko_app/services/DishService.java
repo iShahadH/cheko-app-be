@@ -73,6 +73,11 @@ public class DishService {
         }
     }
 
+    public List<BrowseDishResponse> getSecondHighestCalorie() {
+        List<Dish> dishes = dishRepository.findSecondHighestCaloriePerType();
+        return dishToBrowseDishResponseMapper.mapAll(dishes);
+    }
+
     public void uploadDishImage(Long dishId, MultipartFile file) throws IOException {
         String s3Key = "dishes/" + dishId + "/" + file.getOriginalFilename();
         String url = minioService.uploadFile(file, s3Key);
